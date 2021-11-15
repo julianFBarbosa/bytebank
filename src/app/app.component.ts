@@ -12,10 +12,10 @@ interface Transaction {
 })
 export class AppComponent {
   title = 'bytebank';
-  transfers!: any;
+  transfers: any[] = [];
 
   transfer($event: any) {
-    console.log('$event', $event);
-    this.transfers = $event;
+    const actualTransfer = {...$event, date: new Date()};
+    this.transfers.push(actualTransfer);
   }
 }

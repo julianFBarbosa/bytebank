@@ -1,2 +1,14 @@
-<p>Valor: {{ transfers?.value }}</p>
-<p>Destino: {{ transfers?.destiny }}</p>
+<table class="table">
+  <thead class="table__header" *ngIf="transfers.length > 0; else null">
+    <th class="table__header__content">Data</th>
+    <th class="table__header__content">Valor</th>
+    <th class="table__header__content">Destino</th>
+  </thead>
+  <tbody *ngFor="let transfer of transfers">
+    <tr class="table__line">
+      <td class="table__line__content">{{ transfer.date | date: "short" }}</td>
+      <td class="table__line__content">{{ transfer.value | currency }}</td>
+      <td class="table__line__content">{{ transfer.destiny }}</td>
+    </tr>
+  </tbody>
+</table>
