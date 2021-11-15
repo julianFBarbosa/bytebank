@@ -12,8 +12,7 @@ interface Transaction {
 })
 export class AppComponent {
   title = 'bytebank';
-
-  transfers!: Transaction;
+  transfers!: any;
 
   transfer($event: any) {
     console.log('$event', $event);
