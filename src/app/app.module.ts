@@ -10,7 +10,6 @@ import localePt from '@angular/common/locales/pt';
 
 registerLocaleData(localePt, 'pt');
 
-localePt;
 @NgModule({
   declarations: [AppComponent, NewTransactionComponent, ExtractComponent],
   imports: [BrowserModule, FormsModule],

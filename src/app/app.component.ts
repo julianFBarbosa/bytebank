@@ -12,7 +12,7 @@ interface Transaction {
 })
 export class AppComponent {
   title = 'bytebank';
-  transfers: any[] = [];
+  transfers: Transaction[] = [];
 
   transfer($event: any) {
     const actualTransfer = {...$event, date: new Date()};
