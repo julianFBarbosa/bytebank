@@ -6,15 +6,15 @@ import { Component, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./new-transaction.component.scss'],
 })
 export class NewTransactionComponent {
-  @Output() onTransfer = new EventEmitter();
-  
+  @Output() onTransfer = new EventEmitter<object>();
+
   value!: number;
   destiny!: number;
 
-  transfer() {
+  newTransfer() {
     const emmitedValue = { value: this.value, destiny: this.destiny };
-    this.onTransfer.emit(emmitedValue);
 
+    this.onTransfer.emit(emmitedValue);
     this.clearFields();
   }
 
