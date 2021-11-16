@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TransferService } from './services/transfer.service';
 
 interface Transaction {
   value: number;
@@ -12,10 +13,10 @@ interface Transaction {
 })
 export class AppComponent {
   title = 'bytebank';
-  transfers: Transaction[] = [];
+
+  constructor(private service: TransferService) {}
 
   transfer($event: any) {
-    const actualTransfer = {...$event, date: new Date()};
-    this.transfers.push(actualTransfer);
+    this.service.add($event);
   }
 }
